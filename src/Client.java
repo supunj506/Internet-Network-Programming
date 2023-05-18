@@ -6,6 +6,7 @@
  * Created by IntelliJ IDEA.
  */
 
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -13,6 +14,10 @@ public class Client {
     public static void main(String[] args) {
         try {
             Socket socket=new Socket("Localhost",3000);
+            DataOutputStream dataOutputStream=new DataOutputStream(socket.getOutputStream());
+            dataOutputStream.writeUTF("This is Client  Request");
+
+
 
         } catch (IOException e) {
             e.printStackTrace();

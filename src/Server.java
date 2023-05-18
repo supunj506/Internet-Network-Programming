@@ -19,8 +19,7 @@ public class Server {
             Socket accept = serverSocket.accept();
             DataInputStream dataInputStream=new DataInputStream(accept.getInputStream());
             String request = dataInputStream.readUTF();
-
-
+            System.out.println(request);
 
         } catch (IOException e) {
             e.printStackTrace();

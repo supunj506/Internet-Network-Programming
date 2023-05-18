@@ -16,16 +16,13 @@ public class Server {
     public static void main(String[] args) {
 
         try {
-            ServerSocket serverSocket=new ServerSocket(3000);
+            ServerSocket serverSocket=new ServerSocket(3001);
             Socket accept = serverSocket.accept();
             DataInputStream dataInputStream=new DataInputStream(accept.getInputStream());
             String request = dataInputStream.readUTF();
             System.out.println(request);
 
-//            send massage to client
-            DataOutputStream dataOutputStream=new DataOutputStream(accept.getOutputStream());
-            dataOutputStream.writeUTF("i'm Server");
-            dataOutputStream.flush();
+
 
 
         } catch (IOException e) {

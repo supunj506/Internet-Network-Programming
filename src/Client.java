@@ -6,22 +6,24 @@
  * Created by IntelliJ IDEA.
  */
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 
 public class Client {
     public static void main(String[] args) {
         try {
-            Socket socket=new Socket("Localhost",3000);
+            Socket socket=new Socket("Localhost",3001);
             DataOutputStream dataOutputStream=new DataOutputStream(socket.getOutputStream());
-            dataOutputStream.writeUTF("This is Client  Request");
+            BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
+            String massage="";
+            while (!massage.equals("no")){
+                massage=bufferedReader.readLine();
+                dataOutputStream.writeUTF(massage);
+                dataOutputStream.flush();
+            }
+            dataOutputStream.writeUTF(massage);
             dataOutputStream.flush();
 
-//            catch the server massage
-            DataInputStream dataInputStream=new DataInputStream(socket.getInputStream());
-            System.out.println(dataInputStream.readUTF());
 
         } catch (IOException e) {
             e.printStackTrace();

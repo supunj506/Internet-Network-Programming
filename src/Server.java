@@ -7,6 +7,7 @@
  */
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -20,6 +21,12 @@ public class Server {
             DataInputStream dataInputStream=new DataInputStream(accept.getInputStream());
             String request = dataInputStream.readUTF();
             System.out.println(request);
+
+//            send massage to client
+            DataOutputStream dataOutputStream=new DataOutputStream(accept.getOutputStream());
+            dataOutputStream.writeUTF("i'm Server");
+            dataOutputStream.flush();
+
 
         } catch (IOException e) {
             e.printStackTrace();

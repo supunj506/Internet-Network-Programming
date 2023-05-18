@@ -6,6 +6,7 @@
  * Created by IntelliJ IDEA.
  */
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -17,8 +18,10 @@ public class Client {
             DataOutputStream dataOutputStream=new DataOutputStream(socket.getOutputStream());
             dataOutputStream.writeUTF("This is Client  Request");
             dataOutputStream.flush();
-            dataOutputStream.close();
-            socket.close();
+
+//            catch the server massage
+            DataInputStream dataInputStream=new DataInputStream(socket.getInputStream());
+            System.out.println(dataInputStream.readUTF());
 
         } catch (IOException e) {
             e.printStackTrace();

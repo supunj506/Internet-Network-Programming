@@ -16,8 +16,9 @@ public class Client {
             Socket socket=new Socket("Localhost",3000);
             DataOutputStream dataOutputStream=new DataOutputStream(socket.getOutputStream());
             dataOutputStream.writeUTF("This is Client  Request");
-
-
+            dataOutputStream.flush();
+            dataOutputStream.close();
+            socket.close();
 
         } catch (IOException e) {
             e.printStackTrace();

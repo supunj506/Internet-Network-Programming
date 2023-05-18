@@ -18,6 +18,8 @@ public class Server {
             ServerSocket serverSocket=new ServerSocket(3000);
             Socket accept = serverSocket.accept();
             DataInputStream dataInputStream=new DataInputStream(accept.getInputStream());
+            String request = dataInputStream.readUTF();
+
 
 
         } catch (IOException e) {

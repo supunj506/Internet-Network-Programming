@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="546.0" prefWidth="607.0" styleClass="body" stylesheets="@../asset/styles/dashboardCss.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
+   <children>
+      <Label layoutX="62.0" layoutY="35.0" text="First Chat Application">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="224.0" layoutY="456.0" onAction="#launchAppOnAction" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #58f531; -fx-background-radius: 10;" text="Launch">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
